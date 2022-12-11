@@ -11,9 +11,17 @@ main()
 	printf("year? ");
 	scanf("%i",&y);
 
-	if((m>12)||(m<=0)||(d>31)||(d<=0))
+	if((m>12)||(m<=0))
 	{
-		printf("WRONG DATE, ");
+		printf("WRONG MONTH, ");
+	}
+    if((d>31)||(d<=0))
+	{
+		printf("WRONG DAY, ");
+	}
+	if(y<=0)
+	{
+		printf("WRONG YEAR, ");
 	}
 
 	int v=y%4;
