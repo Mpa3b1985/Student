@@ -91,7 +91,7 @@ main()
 	{
 		printf(", Zodiac sign - capricom");
 	}
-	if(((m==1)&&(d>19))||((m==2)&&(d<22)))
+		if(((m==1)&&(d>19))||((m==2)&&(d<22)))
 	{
 		printf(", Zodiac sign - aquarius");
 	}
@@ -136,7 +136,7 @@ main()
 		printf(", Zodiac sign - sagittarius");
 	}
 	else
-    {
-    	printf(", Zodiac sign - WRONG DATE");
-    }
+	{
+		printf(", Zodiac sign - WRONG DATE");
+	}
 }
