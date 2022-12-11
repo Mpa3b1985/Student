@@ -11,16 +11,27 @@ main()
 	printf("year? ");
 	scanf("%i",&y);
 
-	int v=y%4;
-	if (v==0)
+	if(((m>12)&&(d>31))||((m<=0)&&(d<=0)))
 	{
-		printf ("Year - leap year");
+		printf("WRONG DATE, ");
 	}
-	else
+
+	int v=y%4;
+	if (v>0)
 	{
 		printf ("Year - not a leap year");
 	}
-
+	else
+	{
+		if (v==0)
+		{
+			printf ("Year - leap year");
+		}
+		else
+		{
+			printf ("Year - Wrong year");
+		}
+	}
 
 	int g=y%12;
 	switch(g)
@@ -91,7 +102,7 @@ main()
 	{
 		printf(", Zodiac sign - capricom");
 	}
-		if(((m==1)&&(d>19))||((m==2)&&(d<22)))
+	if(((m==1)&&(d>19))||((m==2)&&(d<22)))
 	{
 		printf(", Zodiac sign - aquarius");
 	}
@@ -134,9 +145,5 @@ main()
 	if(((m==11)&&(d>19))||((m==12)&&(d<22)))
 	{
 		printf(", Zodiac sign - sagittarius");
-	}
-	else
-	{
-		printf(", Zodiac sign - WRONG DATE");
 	}
 }
