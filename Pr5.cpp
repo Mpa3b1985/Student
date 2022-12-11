@@ -135,4 +135,8 @@ main()
 	{
 		printf(", Zodiac sign - sagittarius");
 	}
+	else
+    {
+    	printf(", Zodiac sign - WRONG DATE");
+    }
 }
