@@ -11,7 +11,7 @@ main()
 	printf("year? ");
 	scanf("%i",&y);
 
-	if(((m>12)&&(d>31))||((m<=0)&&(d<=0)))
+	if((m>12)||(m<=0)||(d>31)||(d<=0))
 	{
 		printf("WRONG DATE, ");
 	}
