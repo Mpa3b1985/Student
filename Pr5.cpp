@@ -15,7 +15,7 @@ main()
 	{
 		printf("WRONG MONTH, ");
 	}
-    if((d>31)||(d<=0))
+        if((d>31)||(d<=0))
 	{
 		printf("WRONG DAY, ");
 	}
