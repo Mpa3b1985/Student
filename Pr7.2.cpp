@@ -3,18 +3,37 @@
 main()
 {
 	int a=7;
-	while(a!=5)
+	int b=8%2;
+
+	if(b==0)
+	{
+		printf("delyatsya na 2\n");
+	}
+	else
+	{
+		printf("ne delyatsya na 2\n");
+	}
+	if(b>0)
+	{
+		printf("delyatsya na 3\n");
+	}
+	else
+	{
+		printf("ne delyatsya na 3\n");
+	}
+
+	while(a!=8)
 	{
 		scanf("%i",&a);
-		if(a>5)
+		if(a<=7)
 		{
-			printf("bolshe\n");
+			printf("bolshe 7\n");
 		}
 		else
 		{
-			if(a<5)
+			if(a>=10)
 			{
-				printf("menshe\n");
+				printf("menshe 10\n");
 			}
 		}
 	}
