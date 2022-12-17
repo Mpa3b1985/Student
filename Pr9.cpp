@@ -31,5 +31,5 @@ main()
 	printf("sum of all numbers %i \n",sum);
 	printf("average %i \n",sum/num);
 	printf("min %i \n",min);
-	printf("max %i \n",max);
+	printf("max %i",max);
 }
