@@ -3,17 +3,9 @@
 main()
 
 {
-	int num,t,sum,s,h,min,max;
+	int num,t,sum,min,max;
     printf("how many numbers? ");
     scanf("%i",&num);
-    if(s==0)
-    {
-    	min=t;
-	}
-	if(h==0)
-	{
-		max=t;
-	}
     for(int i=1;i<=num;i=i+1)
 	{
 		printf("enter the number %i - ",i);
@@ -29,7 +21,7 @@ main()
 		}
 	}
 	printf("sum of all numbers %i \n",sum);
-	printf("average %i \n",sum/num);
+	printf("average %f \n",sum/num);
 	printf("min %i \n",min);
 	printf("max %i",max);
 }
