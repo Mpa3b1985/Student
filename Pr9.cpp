@@ -21,7 +21,7 @@ main()
 		}
 	}
 	printf("sum of all numbers %i \n",sum);
-	printf("average %f \n",sum/num);
+	printf("average %i \n",sum/num);
 	printf("min %i \n",min);
 	printf("max %i",max);
 }
