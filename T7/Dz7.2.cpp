@@ -18,8 +18,6 @@ int main()
 	int SIZE=10;
 	int SIZE2=15;
 
-	srand(time(NULL));
-
 	int arr[SIZE];
 	int arr2[SIZE2];
 
