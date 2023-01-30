@@ -6,7 +6,7 @@ int f(int a, int b, int c)
 {
 	if(((a*a==b)&&(a*a==c))||((b*b==a)&&(b*b==c))||((c*c==a)&&(c*c==b)))
 	{
-		return 0;
+		return 2;
 	}
 	else
 	{
@@ -16,37 +16,65 @@ int f(int a, int b, int c)
 		}
 		else
 		{
-			return 2;
+			return 0;
+		}
+	}
+}
+
+void f(int a, int b, int c, int *pz)
+{
+
+	if(((a*a==b)&&(a*a==c))||((b*b==a)&&(b*b==c))||((c*c==a)&&(c*c==b)))
+	{
+		(*pz) = 2;
+	}
+	else
+	{
+		if((a*a==b)||(a*a==c)||(b*b==a)||(b*b==c)||(c*c==a)||(c*c==b))
+		{
+			(*pz) = 1;
+		}
+		else
+		{
+			(*pz) = 0;
+		}
+	}
+}
+
+void f(int a, int b, int c, int z)
+{
+
+	if(((a*a==b)&&(a*a==c))||((b*b==a)&&(b*b==c))||((c*c==a)&&(c*c==b)))
+	{
+		z = 2;
+	}
+	else
+	{
+		if((a*a==b)||(a*a==c)||(b*b==a)||(b*b==c)||(c*c==a)||(c*c==b))
+		{
+			z = 1;
+		}
+		else
+		{
+			z = 0;
 		}
 	}
 }
 
 int main()
 {
-	int a,b,c;
+ 	int a,b,c,z;
 
-	scanf("%d",&a);
-	scanf("%d",&b);
-	scanf("%d",&c);
+	scanf("%i",&a);
+	scanf("%i",&b);
+	scanf("%i",&c);
+
+	int &aref = z;
 
 	int g=f(a,b,c);
+	f(a,b,c,&z);
 
-	switch(g)
-	{
-		case 0:
-			{
-				printf("Dva");
-			}
-			break;
-		case 1:
-			{
-				printf("Odno");
-			}
-			break;
-		case 2:
-			{
-				printf("ni odnogo");
-			}
-			break;
-	}
+	printf("Znachenie 1v = %i\n",g);
+	printf("Znachenie 2v = %i\n",z);
+	printf("Znachenie 3v = %i\n",aref);
 }
