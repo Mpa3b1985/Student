@@ -21,60 +21,63 @@ int f(int a, int b, int c)
 	}
 }
 
-void f(int a, int b, int c, int *pz)
+void f(int a, int b, int c, int *pointer)
 {
-
 	if(((a*a==b)&&(a*a==c))||((b*b==a)&&(b*b==c))||((c*c==a)&&(c*c==b)))
 	{
-		(*pz) = 2;
+		(*pointer) = 2;
 	}
 	else
 	{
 		if((a*a==b)||(a*a==c)||(b*b==a)||(b*b==c)||(c*c==a)||(c*c==b))
 		{
-			(*pz) = 1;
+			(*pointer) = 1;
 		}
 		else
 		{
-			(*pz) = 0;
+			(*pointer) = 0;
 		}
 	}
 }
 
-void f(int a, int b, int c, int z)
+void f(int a, int b, int c, int &aref)
 {
 
 	if(((a*a==b)&&(a*a==c))||((b*b==a)&&(b*b==c))||((c*c==a)&&(c*c==b)))
 	{
-		z = 2;
+		aref = 2;
 	}
 	else
 	{
 		if((a*a==b)||(a*a==c)||(b*b==a)||(b*b==c)||(c*c==a)||(c*c==b))
 		{
-			z = 1;
+			aref = 1;
 		}
 		else
 		{
-			z = 0;
+			aref = 0;
 		}
 	}
 }
 
 int main()
 {
- 	int a,b,c,z;
+ 	int a,b,c,pointer,aref;
 
+	printf("Vvedite pervoe chislo: ");
 	scanf("%i",&a);
+
+	printf("Vvedite vtoroe chislo: ");
 	scanf("%i",&b);
+
+	printf("Vvedite tretie chislo: ");
 	scanf("%i",&c);
 
-	int &aref = z;
-
 	int g=f(a,b,c);
-	f(a,b,c,&z);
+	f(a,b,c,&pointer);
+	f(a,b,c,aref);
 
 	printf("Znachenie 1v = %i\n",g);
-	printf("Znachenie 2v = %i\n",z);
+	printf("Znachenie 2v = %i\n",pointer);
 	printf("Znachenie 3v = %i\n",aref);
 }
