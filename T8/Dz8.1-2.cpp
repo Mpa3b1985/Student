@@ -1,74 +1,28 @@
 #include<iostream>
 #include<string>
 using namespace std;
-//статические объекты
 
-class stolovaya
+class Universety
 {
-public:
-    int skidka;
-
-public:
-    int SetDiscount(int s)
-    {
-        skidka = s;
-    }
-
-    int GetDiscount()
-    {
-        return skidka;
-    }
-};
-
-//объекты одущевленные
-
-class Human
-{
-public:
-    string name;
-    int age{ 0 };
-    int propusk{ 0 };
+private:
+    int discount;
+    int level;
 
 public:
-    void SetHuman(int a,int p,string n)
+    void SetUni(int d, int l)
     {
-        age = a;
-        name = n;
-        propusk = p;
+        discount = d;
+        level = l;
     }
 
-    string GetName()
+    void GetDiscount()
     {
-        return name;
+        cout << "Скидка в столовой=" << discount << endl;
     }
 
-    int GetPropusk()
+    void GetLevel()
     {
-        return propusk;
-    }
-};
-
-class Teacher: public Human, public stolovaya
-{
-
-};
-
-class Researcher: public Human, public stolovaya
-{
-
-};
-
-class Technical: public Human, public stolovaya
-{
-
-};
-
-class Student: public Human
-{
-public:
-    string GetSt()
-    {
-        cout << "Пусти красный крестик" << endl;
+        cout << "Допуск в корпус № " << level << endl;
     }
 };
 
@@ -76,26 +30,37 @@ int main()
 {
     setlocale(LC_ALL, "ru");
 
-    Teacher korp1;
-    korp1.SetHuman(57,4,"Иванов Иван Иванович");
-    korp1.SetDiscount(15);
+    Universety prepod;
+    prepod.SetUni(30,4);
 
-    Researcher korp2;
-    korp2.SetHuman(46, 3, "Сидоров Петр Иванович");
-    korp2.SetDiscount(10);
+    Universety botan;
+    botan.SetUni(25,3);
 
-    Technical korp3;
-    korp3.SetHuman(51, 2, "Федоров Степан Иванович");
-    korp3.SetDiscount(5);
+    Universety tech;
+    tech.SetUni(20,2);
 
-    int stolov1 = korp1.GetDiscount();
-    int stolov2 = korp2.GetDiscount();
-    int stolov3 = korp3.GetDiscount();
+    Universety student;
+    student.SetUni(5,1);
 
-    Student st;
-    st.SetHuman(22, 1, "Петров Петр Петрович");
+    cout << "\nДля преподователей предусмотрено:" << endl;
 
+    prepod.GetDiscount();
+    prepod.GetLevel();
 
+    cout << "\nДля научного персонала предусмотрено:" << endl;
+
+    botan.GetDiscount();
+    botan.GetLevel();
+
+    cout << "\nДля технического персонала предусмотрено:" << endl;
+
+    tech.GetDiscount();
+    tech.GetLevel();
+
+    cout << "\nДля студентов предусмотрено:" << endl;
+
+    student.GetDiscount();
+    student.GetLevel();
 
     return 0;
 }
