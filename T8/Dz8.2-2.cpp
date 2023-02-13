@@ -4,19 +4,23 @@
 
 using namespace std;
 
+void FileWasNotOpenedException(string path)
+{
+    ifstream fin;
+    fin.exceptions(ifstream::badbit | ifstream::failbit);
+    fin.open(path);
+}
+
 int main()
 {
     setlocale(LC_ALL, "ru");
 
     string path = "file.txt";
 
-    ifstream fin;
-    fin.exceptions(ifstream::badbit | ifstream::failbit);
-
     try
     {
         cout << "Попытка открыть файл" << endl;
-        fin.open(path);
+        FileWasNotOpenedException(path);
         cout << "Файл открыт" << endl;
     }
     catch (const std::exception & e)
